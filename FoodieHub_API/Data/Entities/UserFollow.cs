@@ -2,7 +2,7 @@
 
 namespace FoodieHub_API.Data.Entities
 {
-    public class Follow
+    public class UserFollow
     {
         public DateTime Created_At { get; set; }= DateTime.Now;
 

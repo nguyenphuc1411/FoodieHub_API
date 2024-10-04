@@ -1,7 +1,68 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\HocTap\\DATN\\FoodieHub_API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\appdbconext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\appdbconext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Migrations\\20241004023222_migration1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FoodieHub_API\\Data\\Migrations\\20241004023222_migration1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\recipe_ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\recipe_ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\processstep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\processstep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\ingredient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\favorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\recipereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\recipereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\data\\entities\\userfollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\data\\entities\\userfollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\controllers\\recipescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\controllers\\recipescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|d:\\hoctap\\datn\\foodiehub_api\\foodiehub_api\\controllers\\ingredientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8CABEDE-383A-4038-9891-B4A7A948897E}|FoodieHub_API\\FoodieHub_API.csproj|solutionrelative:foodiehub_api\\controllers\\ingredientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +70,206 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20241004023222_migration1.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Migrations\\20241004023222_migration1.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Migrations\\20241004023222_migration1.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Migrations\\20241004023222_migration1.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Migrations\\20241004023222_migration1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:32:23.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Notification.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\Notification.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Notification.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\Notification.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:30:26.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Ingredient.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Ingredient.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\Ingredient.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Ingredient.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\Ingredient.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:30:22.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Favorite.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Favorite.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\Favorite.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Favorite.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\Favorite.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:30:17.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Category.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\Category.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Category.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:30:09.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProcessStep.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\ProcessStep.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\ProcessStep.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\ProcessStep.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\ProcessStep.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:25:00.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Recipe.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Recipe.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\Recipe.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Recipe.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\Recipe.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAiwCsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:28:11.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbConext.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\AppDbConext.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\AppDbConext.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\AppDbConext.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\AppDbConext.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAzwBQAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:27:05.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\ApplicationUser.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\ApplicationUser.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\ApplicationUser.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:29:58.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Recipe_Ingredient.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Recipe_Ingredient.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\Recipe_Ingredient.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\Recipe_Ingredient.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\Recipe_Ingredient.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:29:41.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RecipeReport.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\RecipeReport.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\RecipeReport.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\RecipeReport.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\RecipeReport.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA5wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:29:44.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserFollow.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\UserFollow.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Data\\Entities\\UserFollow.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Data\\Entities\\UserFollow.cs",
+              "RelativeToolTip": "FoodieHub_API\\Data\\Entities\\UserFollow.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:29:49.56Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IngredientsController.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Controllers\\IngredientsController.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Controllers\\IngredientsController.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Controllers\\IngredientsController.cs",
+              "RelativeToolTip": "FoodieHub_API\\Controllers\\IngredientsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:20:27.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RecipesController.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Controllers\\RecipesController.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Controllers\\RecipesController.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Controllers\\RecipesController.cs",
+              "RelativeToolTip": "FoodieHub_API\\Controllers\\RecipesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:20:03.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "FoodieHub_API\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "FoodieHub_API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:19:47.675Z",
+              "EditorCaption": ""
             }
           ]
         }

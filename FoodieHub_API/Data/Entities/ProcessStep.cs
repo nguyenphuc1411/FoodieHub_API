@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FoodieHub_API.Data.Entities
 {
-    public class Recipe_Step
+    public class ProcessStep
     {
         [Key]
         public int StepID { get; set; }

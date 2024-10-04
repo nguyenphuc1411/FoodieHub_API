@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FoodieHub_API.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class migration1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -171,29 +171,6 @@ namespace FoodieHub_API.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Follows",
-                columns: table => new
-                {
-                    FollowerID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    FollowedID = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Follows", x => new { x.FollowerID, x.FollowedID });
-                    table.ForeignKey(
-                        name: "FK_Follows_AspNetUsers_FollowedID",
-                        column: x => x.FollowedID,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Follows_AspNetUsers_FollowerID",
-                        column: x => x.FollowerID,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Ingredients",
                 columns: table => new
                 {
@@ -230,6 +207,29 @@ namespace FoodieHub_API.Data.Migrations
                     table.ForeignKey(
                         name: "FK_Notifications_AspNetUsers_UserID",
                         column: x => x.UserID,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserFollows",
+                columns: table => new
+                {
+                    FollowerID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FollowedID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserFollows", x => new { x.FollowerID, x.FollowedID });
+                    table.ForeignKey(
+                        name: "FK_UserFollows_AspNetUsers_FollowedID",
+                        column: x => x.FollowedID,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_UserFollows_AspNetUsers_FollowerID",
+                        column: x => x.FollowerID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                 });
@@ -318,6 +318,27 @@ namespace FoodieHub_API.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProcessSteps",
+                columns: table => new
+                {
+                    StepID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "varchar(255)", nullable: false),
+                    Description = table.Column<string>(type: "varchar(max)", nullable: false),
+                    ImageURL = table.Column<string>(type: "varchar(255)", nullable: true),
+                    RecipeID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProcessSteps", x => x.StepID);
+                    table.ForeignKey(
+                        name: "FK_ProcessSteps_Recipes_RecipeID",
+                        column: x => x.RecipeID,
+                        principalTable: "Recipes",
+                        principalColumn: "RecipeID");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Recipe_Ingredients",
                 columns: table => new
                 {
@@ -341,28 +362,7 @@ namespace FoodieHub_API.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Recipe_Steps",
-                columns: table => new
-                {
-                    StepID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "varchar(255)", nullable: false),
-                    Description = table.Column<string>(type: "varchar(max)", nullable: false),
-                    ImageURL = table.Column<string>(type: "varchar(255)", nullable: true),
-                    RecipeID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Recipe_Steps", x => x.StepID);
-                    table.ForeignKey(
-                        name: "FK_Recipe_Steps_Recipes_RecipeID",
-                        column: x => x.RecipeID,
-                        principalTable: "Recipes",
-                        principalColumn: "RecipeID");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Reports",
+                name: "RecipeReports",
                 columns: table => new
                 {
                     ReporterID = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -375,19 +375,19 @@ namespace FoodieHub_API.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Reports", x => new { x.ReporterID, x.RecipeID });
+                    table.PrimaryKey("PK_RecipeReports", x => new { x.ReporterID, x.RecipeID });
                     table.ForeignKey(
-                        name: "FK_Reports_AspNetUsers_HandlerID",
+                        name: "FK_RecipeReports_AspNetUsers_HandlerID",
                         column: x => x.HandlerID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Reports_AspNetUsers_ReporterID",
+                        name: "FK_RecipeReports_AspNetUsers_ReporterID",
                         column: x => x.ReporterID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Reports_Recipes_RecipeID",
+                        name: "FK_RecipeReports_Recipes_RecipeID",
                         column: x => x.RecipeID,
                         principalTable: "Recipes",
                         principalColumn: "RecipeID");
@@ -396,7 +396,7 @@ namespace FoodieHub_API.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Avatar", "Bio", "ConcurrencyStamp", "Created_At", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Status", "TwoFactorEnabled", "Updated_At", "UserName" },
-                values: new object[] { "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee", 0, null, null, "89b5c539-803f-4000-bb6a-c7d69fba7f4c", new DateTime(2024, 10, 4, 9, 4, 32, 899, DateTimeKind.Local).AddTicks(102), "admin@gmail.com", true, "Admin Default", false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEI1yB29rKPT4SGW9OMtulygqMlMaHJlh5IlJ4yvqfOkdOeGA0c5Ey3riCdC1QykMkg==", null, false, "6a70ed87-c12c-4529-ae48-86fbca3d86e8", "Active", false, new DateTime(2024, 10, 4, 9, 4, 32, 899, DateTimeKind.Local).AddTicks(26), "Admin" });
+                values: new object[] { "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee", 0, null, null, "ee499860-d536-4bc6-ae80-4dd6c7f1e65d", new DateTime(2024, 10, 4, 9, 32, 22, 259, DateTimeKind.Local).AddTicks(4885), "admin@gmail.com", true, "Admin Default", false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEKHG9lnEW/QwMn736cavFLSj+ab3SUU2OdbQdNLA9YSLL6bV2VXi6Oz3elCP8z86VA==", null, false, "11fbd3da-2c36-4afb-a5c0-386d25bc67d3", "Active", false, new DateTime(2024, 10, 4, 9, 32, 22, 259, DateTimeKind.Local).AddTicks(4822), "Admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -453,11 +453,6 @@ namespace FoodieHub_API.Data.Migrations
                 column: "RecipeID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Follows_FollowedID",
-                table: "Follows",
-                column: "FollowedID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Ingredients_UserID",
                 table: "Ingredients",
                 column: "UserID");
@@ -468,13 +463,23 @@ namespace FoodieHub_API.Data.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProcessSteps_RecipeID",
+                table: "ProcessSteps",
+                column: "RecipeID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Recipe_Ingredients_RecipeID",
                 table: "Recipe_Ingredients",
                 column: "RecipeID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Recipe_Steps_RecipeID",
-                table: "Recipe_Steps",
+                name: "IX_RecipeReports_HandlerID",
+                table: "RecipeReports",
+                column: "HandlerID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RecipeReports_RecipeID",
+                table: "RecipeReports",
                 column: "RecipeID");
 
             migrationBuilder.CreateIndex(
@@ -488,14 +493,9 @@ namespace FoodieHub_API.Data.Migrations
                 column: "UserID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reports_HandlerID",
-                table: "Reports",
-                column: "HandlerID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Reports_RecipeID",
-                table: "Reports",
-                column: "RecipeID");
+                name: "IX_UserFollows_FollowedID",
+                table: "UserFollows",
+                column: "FollowedID");
         }
 
         /// <inheritdoc />
@@ -523,19 +523,19 @@ namespace FoodieHub_API.Data.Migrations
                 name: "Favorites");
 
             migrationBuilder.DropTable(
-                name: "Follows");
+                name: "Notifications");
 
             migrationBuilder.DropTable(
-                name: "Notifications");
+                name: "ProcessSteps");
 
             migrationBuilder.DropTable(
                 name: "Recipe_Ingredients");
 
             migrationBuilder.DropTable(
-                name: "Recipe_Steps");
+                name: "RecipeReports");
 
             migrationBuilder.DropTable(
-                name: "Reports");
+                name: "UserFollows");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

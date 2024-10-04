@@ -14,13 +14,13 @@ namespace FoodieHub_API.Data
         public DbSet<Category> Categorys { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
-        public DbSet<Follow> Follows { get; set; }
+        public DbSet<UserFollow> UserFollows { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Recipe_Ingredient> Recipe_Ingredients { get; set; }
-        public DbSet<Recipe_Step> Recipe_Steps { get; set; }
-        public DbSet<Report> Reports { get; set; }
+        public DbSet<ProcessStep> ProcessSteps { get; set; }
+        public DbSet<RecipeReport> RecipeReports { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -52,9 +52,9 @@ namespace FoodieHub_API.Data
             {
                 options.HasMany(r => r.Comments).WithOne(c => c.Recipe).HasForeignKey(c => c.RecipeID);
                 options.HasMany(r => r.Favorites).WithOne(f => f.Recipe).HasForeignKey(f => f.RecipeID);
-                options.HasMany(r => r.Reports).WithOne(r => r.Recipe).HasForeignKey(r =>r.RecipeID);
+                options.HasMany(r => r.RecipeReports).WithOne(r => r.Recipe).HasForeignKey(r =>r.RecipeID);
                 options.HasMany(r => r.Recipe_Ingredients).WithOne(ri => ri.Recipe).HasForeignKey(ri => ri.RecipeID);
-                options.HasMany(r => r.Recipe_Steps).WithOne(st => st.Recipe).HasForeignKey(st => st.RecipeID);
+                options.HasMany(r => r.ProcessSteps).WithOne(st => st.Recipe).HasForeignKey(st => st.RecipeID);
             });
 
             // Cấu hình khóa ngoại liên quan đến Ingredient
@@ -77,11 +77,11 @@ namespace FoodieHub_API.Data
             builder.Entity<Recipe_Ingredient>()
                 .HasKey(ei => new { ei.IngredientID, ei.RecipeID });
 
-            builder.Entity<Follow>()
+            builder.Entity<UserFollow>()
                .HasKey(f => new { f.FollowerID, f.FollowedID });
 
 
-            builder.Entity<Report>()
+            builder.Entity<RecipeReport>()
                .HasKey(r => new { r.ReporterID, r.RecipeID });
 
             // Cấu hình tất cả Foreign Key DeleteBehavior là NoAction

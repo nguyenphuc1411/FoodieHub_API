@@ -33,12 +33,12 @@ namespace FoodieHub_API.Data.Entities
 
         public ICollection<Ingredient> Ingredients { get; set; }
 
-        public ICollection<Follow> Followers { get; set; }
-        public ICollection<Follow> Following { get; set; }
+        public ICollection<UserFollow> Followers { get; set; }
+        public ICollection<UserFollow> Following { get; set; }
 
-        public ICollection<Report> Reporters { get; set; }
+        public ICollection<RecipeReport> Reporters { get; set; }
 
-        public ICollection<Report> Handlers { get; set; }
+        public ICollection<RecipeReport> Handlers { get; set; }
 
     }
 }

@@ -41,12 +41,12 @@ namespace FoodieHub_API.Data.Entities
         // Collection Link
         public ICollection<Recipe_Ingredient> Recipe_Ingredients { get; set; }
 
-        public ICollection<Recipe_Step> Recipe_Steps{ get; set; }
+        public ICollection<ProcessStep> ProcessSteps { get; set; }
 
         public ICollection<Comment> Comments { get; set; }
 
         public ICollection<Favorite> Favorites { get; set; }
 
-        public ICollection<Report> Reports { get; set; }
+        public ICollection<RecipeReport> RecipeReports { get; set; }
     }
 }

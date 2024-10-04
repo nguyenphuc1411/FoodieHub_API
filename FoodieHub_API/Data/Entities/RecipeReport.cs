@@ -2,7 +2,7 @@
 
 namespace FoodieHub_API.Data.Entities
 {
-    public class Report
+    public class RecipeReport
     {
         public DateTime Created_At { get; set; } = DateTime.Now;
 

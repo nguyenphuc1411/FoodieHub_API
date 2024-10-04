@@ -18,13 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Data\Migrations\" />
     <Folder Include="DTOs\" />
-    <Folder Include="Configurations\" />
-    <Folder Include="wwwroot\" />
     <Folder Include="Repositories\" />
     <Folder Include="Services\" />
+    <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
 </Project>

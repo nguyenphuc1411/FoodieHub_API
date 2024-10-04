@@ -111,20 +111,20 @@ namespace FoodieHub_API.Data.Migrations
                         {
                             Id = "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "89b5c539-803f-4000-bb6a-c7d69fba7f4c",
-                            Created_At = new DateTime(2024, 10, 4, 9, 4, 32, 899, DateTimeKind.Local).AddTicks(102),
+                            ConcurrencyStamp = "ee499860-d536-4bc6-ae80-4dd6c7f1e65d",
+                            Created_At = new DateTime(2024, 10, 4, 9, 32, 22, 259, DateTimeKind.Local).AddTicks(4885),
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             FullName = "Admin Default",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEI1yB29rKPT4SGW9OMtulygqMlMaHJlh5IlJ4yvqfOkdOeGA0c5Ey3riCdC1QykMkg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKHG9lnEW/QwMn736cavFLSj+ab3SUU2OdbQdNLA9YSLL6bV2VXi6Oz3elCP8z86VA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6a70ed87-c12c-4529-ae48-86fbca3d86e8",
+                            SecurityStamp = "11fbd3da-2c36-4afb-a5c0-386d25bc67d3",
                             Status = "Active",
                             TwoFactorEnabled = false,
-                            Updated_At = new DateTime(2024, 10, 4, 9, 4, 32, 899, DateTimeKind.Local).AddTicks(26),
+                            Updated_At = new DateTime(2024, 10, 4, 9, 32, 22, 259, DateTimeKind.Local).AddTicks(4822),
                             UserName = "Admin"
                         });
                 });
@@ -202,24 +202,6 @@ namespace FoodieHub_API.Data.Migrations
                     b.ToTable("Favorites");
                 });
 
-            modelBuilder.Entity("FoodieHub_API.Data.Entities.Follow", b =>
-                {
-                    b.Property<string>("FollowerID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("FollowedID")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("Created_At")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("FollowerID", "FollowedID");
-
-                    b.HasIndex("FollowedID");
-
-                    b.ToTable("Follows");
-                });
-
             modelBuilder.Entity("FoodieHub_API.Data.Entities.Ingredient", b =>
                 {
                     b.Property<int>("IngredientID")
@@ -274,6 +256,35 @@ namespace FoodieHub_API.Data.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("FoodieHub_API.Data.Entities.ProcessStep", b =>
+                {
+                    b.Property<int>("StepID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StepID"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("varchar(max)");
+
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("RecipeID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("StepID");
+
+                    b.HasIndex("RecipeID");
+
+                    b.ToTable("ProcessSteps");
                 });
 
             modelBuilder.Entity("FoodieHub_API.Data.Entities.Recipe", b =>
@@ -331,54 +342,7 @@ namespace FoodieHub_API.Data.Migrations
                     b.ToTable("Recipes");
                 });
 
-            modelBuilder.Entity("FoodieHub_API.Data.Entities.Recipe_Ingredient", b =>
-                {
-                    b.Property<int>("IngredientID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RecipeID")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Quantity")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("IngredientID", "RecipeID");
-
-                    b.HasIndex("RecipeID");
-
-                    b.ToTable("Recipe_Ingredients");
-                });
-
-            modelBuilder.Entity("FoodieHub_API.Data.Entities.Recipe_Step", b =>
-                {
-                    b.Property<int>("StepID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StepID"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("varchar(max)");
-
-                    b.Property<string>("ImageURL")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<int>("RecipeID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("varchar(255)");
-
-                    b.HasKey("StepID");
-
-                    b.HasIndex("RecipeID");
-
-                    b.ToTable("Recipe_Steps");
-                });
-
-            modelBuilder.Entity("FoodieHub_API.Data.Entities.Report", b =>
+            modelBuilder.Entity("FoodieHub_API.Data.Entities.RecipeReport", b =>
                 {
                     b.Property<string>("ReporterID")
                         .HasColumnType("nvarchar(450)");
@@ -408,7 +372,43 @@ namespace FoodieHub_API.Data.Migrations
 
                     b.HasIndex("RecipeID");
 
-                    b.ToTable("Reports");
+                    b.ToTable("RecipeReports");
+                });
+
+            modelBuilder.Entity("FoodieHub_API.Data.Entities.Recipe_Ingredient", b =>
+                {
+                    b.Property<int>("IngredientID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RecipeID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("IngredientID", "RecipeID");
+
+                    b.HasIndex("RecipeID");
+
+                    b.ToTable("Recipe_Ingredients");
+                });
+
+            modelBuilder.Entity("FoodieHub_API.Data.Entities.UserFollow", b =>
+                {
+                    b.Property<string>("FollowerID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("FollowedID")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("Created_At")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("FollowerID", "FollowedID");
+
+                    b.HasIndex("FollowedID");
+
+                    b.ToTable("UserFollows");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -582,25 +582,6 @@ namespace FoodieHub_API.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("FoodieHub_API.Data.Entities.Follow", b =>
-                {
-                    b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "Followed")
-                        .WithMany("Following")
-                        .HasForeignKey("FollowedID")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "Follower")
-                        .WithMany("Followers")
-                        .HasForeignKey("FollowerID")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Followed");
-
-                    b.Navigation("Follower");
-                });
-
             modelBuilder.Entity("FoodieHub_API.Data.Entities.Ingredient", b =>
                 {
                     b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "User")
@@ -623,6 +604,17 @@ namespace FoodieHub_API.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("FoodieHub_API.Data.Entities.ProcessStep", b =>
+                {
+                    b.HasOne("FoodieHub_API.Data.Entities.Recipe", "Recipe")
+                        .WithMany("ProcessSteps")
+                        .HasForeignKey("RecipeID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Recipe");
+                });
+
             modelBuilder.Entity("FoodieHub_API.Data.Entities.Recipe", b =>
                 {
                     b.HasOne("FoodieHub_API.Data.Entities.Category", "Category")
@@ -640,6 +632,32 @@ namespace FoodieHub_API.Data.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("FoodieHub_API.Data.Entities.RecipeReport", b =>
+                {
+                    b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "Handler")
+                        .WithMany("Handlers")
+                        .HasForeignKey("HandlerID")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("FoodieHub_API.Data.Entities.Recipe", "Recipe")
+                        .WithMany("RecipeReports")
+                        .HasForeignKey("RecipeID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "Reporter")
+                        .WithMany("Reporters")
+                        .HasForeignKey("ReporterID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Handler");
+
+                    b.Navigation("Recipe");
+
+                    b.Navigation("Reporter");
                 });
 
             modelBuilder.Entity("FoodieHub_API.Data.Entities.Recipe_Ingredient", b =>
@@ -661,41 +679,23 @@ namespace FoodieHub_API.Data.Migrations
                     b.Navigation("Recipe");
                 });
 
-            modelBuilder.Entity("FoodieHub_API.Data.Entities.Recipe_Step", b =>
+            modelBuilder.Entity("FoodieHub_API.Data.Entities.UserFollow", b =>
                 {
-                    b.HasOne("FoodieHub_API.Data.Entities.Recipe", "Recipe")
-                        .WithMany("Recipe_Steps")
-                        .HasForeignKey("RecipeID")
+                    b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "Followed")
+                        .WithMany("Following")
+                        .HasForeignKey("FollowedID")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Recipe");
-                });
-
-            modelBuilder.Entity("FoodieHub_API.Data.Entities.Report", b =>
-                {
-                    b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "Handler")
-                        .WithMany("Handlers")
-                        .HasForeignKey("HandlerID")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("FoodieHub_API.Data.Entities.Recipe", "Recipe")
-                        .WithMany("Reports")
-                        .HasForeignKey("RecipeID")
+                    b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "Follower")
+                        .WithMany("Followers")
+                        .HasForeignKey("FollowerID")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("FoodieHub_API.Data.Entities.ApplicationUser", "Reporter")
-                        .WithMany("Reporters")
-                        .HasForeignKey("ReporterID")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                    b.Navigation("Followed");
 
-                    b.Navigation("Handler");
-
-                    b.Navigation("Recipe");
-
-                    b.Navigation("Reporter");
+                    b.Navigation("Follower");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -786,11 +786,11 @@ namespace FoodieHub_API.Data.Migrations
 
                     b.Navigation("Favorites");
 
+                    b.Navigation("ProcessSteps");
+
+                    b.Navigation("RecipeReports");
+
                     b.Navigation("Recipe_Ingredients");
-
-                    b.Navigation("Recipe_Steps");
-
-                    b.Navigation("Reports");
                 });
 #pragma warning restore 612, 618
         }
