@@ -25,17 +25,20 @@ namespace FoodieHub_API.Data.Entities
         // Foreign Key Link
         public ICollection<Notification> Notifications { get; set; }
 
-        public ICollection<Follow> Follows { get; set; }
-
         public ICollection<Comment> Comments { get; set; }
 
         public ICollection<Favorite> Favorites { get; set; }
 
-        public ICollection<Report> Reports { get; set; }
-
         public ICollection<Recipe> Recipes { get; set; }
 
         public ICollection<Ingredient> Ingredients { get; set; }
+
+        public ICollection<Follow> Followers { get; set; }
+        public ICollection<Follow> Following { get; set; }
+
+        public ICollection<Report> Reporters { get; set; }
+
+        public ICollection<Report> Handlers { get; set; }
 
     }
 }

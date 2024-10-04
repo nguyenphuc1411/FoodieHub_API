@@ -15,6 +15,7 @@ namespace FoodieHub_API.Data.Entities
 
         // Foreign Key Link
 
-        public ApplicationUser User { get; set; }
+        public ApplicationUser Follower { get; set; }
+        public ApplicationUser Followed { get; set; }
     }
 }

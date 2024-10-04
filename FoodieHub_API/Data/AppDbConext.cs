@@ -1,6 +1,8 @@
 ﻿using FoodieHub_API.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace FoodieHub_API.Data
 {
@@ -31,11 +33,17 @@ namespace FoodieHub_API.Data
             builder.Entity<ApplicationUser>(options =>
             {
                 options.HasMany(u => u.Notifications).WithOne(n => n.User).HasForeignKey(n => n.UserID);
-                options.HasMany(u => u.Follows).WithOne(f => f.User).HasForeignKey(f => new {f.FollowerID,f.FollowedID});
+                // Khoa ngoai cho bang Follow
+                options.HasMany(u => u.Followers).WithOne(f => f.Follower).HasForeignKey(f =>f.FollowerID);
+                options.HasMany(u => u.Following).WithOne(f => f.Followed).HasForeignKey(f => f.FollowedID);
+
                 options.HasMany(u => u.Comments).WithOne(c => c.User).HasForeignKey(c => c.UserID);
-                options.HasMany(u => u.Favorites).WithOne(f => f.User).HasForeignKey(f => f.UserID);
+                options.HasMany(u => u.Favorites).WithOne(f => f.User).HasForeignKey(f => f.UserID);               
                 options.HasMany(u => u.Recipes).WithOne(r => r.User).HasForeignKey(r => r.UserID);
-                options.HasMany(u => u.Reports).WithOne(r => r.User).HasForeignKey(r => new {r.ReporterID,r.HandlerID});
+                // Khóa ngoại cho bảng Report
+                options.HasMany(u => u.Reporters).WithOne(r => r.Reporter).HasForeignKey(r => r.ReporterID);
+                options.HasMany(u => u.Handlers).WithOne(r => r.Handler).HasForeignKey(r => r.HandlerID);
+
                 options.HasMany(u => u.Ingredients).WithOne(i => i.User).HasForeignKey(i => i.UserID);
             });
 
@@ -75,6 +83,36 @@ namespace FoodieHub_API.Data
 
             builder.Entity<Report>()
                .HasKey(r => new { r.ReporterID, r.RecipeID });
+
+            // Cấu hình tất cả Foreign Key DeleteBehavior là NoAction
+
+            foreach (var foreignKey in builder.Model.GetEntityTypes().SelectMany(x=>x.GetForeignKeys()))
+            {
+                foreignKey.DeleteBehavior = DeleteBehavior.NoAction;
+            }
+
+
+            // Dữ liệu mặc định cho AspNetUsers
+
+            var hasher = new PasswordHasher<ApplicationUser>();
+
+            var adminUser = new ApplicationUser
+            {
+                Id = "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee", 
+                FullName = "Admin Default",
+                UserName = "Admin",
+                NormalizedUserName = "ADMIN",
+                Email = "admin@gmail.com",
+                NormalizedEmail = "ADMIN@GMAIL.COM",
+                EmailConfirmed = true,
+                Status = "Active", 
+                Created_At = DateTime.Now
+            };
+
+            // Tạo password hash cho người dùng admin
+            adminUser.PasswordHash = hasher.HashPassword(adminUser, "Admin123");
+
+            builder.Entity<ApplicationUser>().HasData(adminUser);
         }
     }
 }

@@ -26,6 +26,8 @@ namespace FoodieHub_API.Data.Entities
 
         public Recipe Recipe { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public ApplicationUser Reporter { get; set; }
+
+        public ApplicationUser? Handler { get; set; }
     }
 }
