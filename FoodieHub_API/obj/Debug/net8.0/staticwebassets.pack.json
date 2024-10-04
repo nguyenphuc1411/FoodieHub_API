@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\wwwroot\\Images\\Folder lưu hình ảnh.txt",
+      "PackagePath": "staticwebassets\\Images\\Folder lưu hình ảnh.txt"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FoodieHub_API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FoodieHub_API.props",
+      "PackagePath": "build\\FoodieHub_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FoodieHub_API.props",
+      "PackagePath": "buildMultiTargeting\\FoodieHub_API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FoodieHub_API.props",
+      "PackagePath": "buildTransitive\\FoodieHub_API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

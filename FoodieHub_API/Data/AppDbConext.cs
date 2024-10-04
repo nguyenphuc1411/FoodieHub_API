@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 
 namespace FoodieHub_API.Data
 {
@@ -92,27 +93,37 @@ namespace FoodieHub_API.Data
             }
 
 
-            // Dữ liệu mặc định cho AspNetUsers
+            // Dữ liệu mặc định 
 
-            var hasher = new PasswordHasher<ApplicationUser>();
+            // Seed dữ liệu cho role
+            builder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Id = "1", Name = "Admin", NormalizedName = "ADMIN" },
+                new IdentityRole { Id = "2", Name = "User", NormalizedName = "USER" },
+                new IdentityRole { Id = "3", Name = "Moderator", NormalizedName = "MODERATOR" }
+            );
 
+            // Seed dữ liệu cho user admin
             var adminUser = new ApplicationUser
             {
-                Id = "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee", 
+                Id = "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee",
                 FullName = "Admin Default",
-                UserName = "Admin",
-                NormalizedUserName = "ADMIN",
-                Email = "admin@gmail.com",
+                UserName = "Admin123",
+                NormalizedUserName = "ADMIN123",
+                Email = "admin@example.com",
                 NormalizedEmail = "ADMIN@GMAIL.COM",
                 EmailConfirmed = true,
-                Status = "Active", 
-                Created_At = DateTime.Now
+                Status = "Active",
+                Created_At = DateTime.Now,
+                PasswordHash = new PasswordHasher<ApplicationUser>().HashPassword(null, "Admin@123")
             };
 
-            // Tạo password hash cho người dùng admin
-            adminUser.PasswordHash = hasher.HashPassword(adminUser, "Admin123");
-
             builder.Entity<ApplicationUser>().HasData(adminUser);
+
+            // Seed dữ liệu cho user role
+            builder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string> { UserId = adminUser.Id, RoleId = "1" } // Admin role
+            );
+
         }
     }
 }

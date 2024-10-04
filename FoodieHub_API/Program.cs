@@ -1,5 +1,6 @@
 ﻿using FoodieHub_API.Data;
 using FoodieHub_API.Data.Entities;
+using FoodieHub_API.Mappings;
 using FoodieHub_API.Repositories;
 using FoodieHub_API.Services;
 using Microsoft.AspNetCore.Identity;
@@ -33,21 +34,24 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowsOrigins",
         policy =>
         {
-            policy.WithOrigins("https://example.com", "https://anotherdomain.com") // Chỉ cho phép các nguồn này
+            policy.WithOrigins("https://example.com") // Chỉ cho phép các nguồn này
                     .AllowAnyHeader()  // Cho phép tất cả các header
                     .AllowAnyMethod(); // Cho phép tất cả method GET POST PUT DELETE
         }
     );
 });
+// Khai báo AutoMapper
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
 // Khai báo các DI
 
-builder.Services.AddScoped<IAuthService, AuthRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
-builder.Services.AddScoped<IRecipeService, RecipeRepository>();
+builder.Services.AddScoped<IRecipeService, RecipeService>();
 
-
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 

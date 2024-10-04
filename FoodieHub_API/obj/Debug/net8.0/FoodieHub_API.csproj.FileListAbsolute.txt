@@ -142,3 +142,4 @@ D:\HocTap\DATN\FoodieHub_API\FoodieHub_API\obj\Debug\net8.0\refint\FoodieHub_API
 D:\HocTap\DATN\FoodieHub_API\FoodieHub_API\obj\Debug\net8.0\FoodieHub_API.pdb
 D:\HocTap\DATN\FoodieHub_API\FoodieHub_API\obj\Debug\net8.0\FoodieHub_API.genruntimeconfig.cache
 D:\HocTap\DATN\FoodieHub_API\FoodieHub_API\obj\Debug\net8.0\ref\FoodieHub_API.dll
+D:\HocTap\DATN\FoodieHub_API\FoodieHub_API\bin\Debug\net8.0\AutoMapper.dll

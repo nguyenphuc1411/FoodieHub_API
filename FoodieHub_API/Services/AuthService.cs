@@ -2,7 +2,7 @@
 
 namespace FoodieHub_API.Repositories
 {
-    public class RecipeRepository:IRecipeService
+    public class AuthService:IAuthService
     {
     }
 }

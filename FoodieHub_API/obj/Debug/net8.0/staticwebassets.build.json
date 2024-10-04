@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xYB+5HFJp7BqHKi1EtZCHxnX3NiRjLvY6oX9JH/MMHA=",
+  "Hash": "qEWpE2HzvXexDw7g13oxR6Dcas4m9ENtDjQPFysEt+U=",
   "Source": "FoodieHub_API",
   "BasePath": "_content/FoodieHub_API",
   "Mode": "Default",
@@ -15,5 +15,25 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\wwwroot\\Images\\Folder lưu hình ảnh.txt",
+      "SourceId": "FoodieHub_API",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\HocTap\\DATN\\FoodieHub_API\\FoodieHub_API\\wwwroot\\",
+      "BasePath": "_content/FoodieHub_API",
+      "RelativePath": "Images/Folder lưu hình ảnh.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Folder lưu hình ảnh.txt"
+    }
+  ]
 }
