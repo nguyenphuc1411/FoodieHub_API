@@ -1,5 +1,7 @@
 ﻿using FoodieHub_API.Data;
 using FoodieHub_API.Data.Entities;
+using FoodieHub_API.Repositories;
+using FoodieHub_API.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -38,6 +40,15 @@ builder.Services.AddCors(options =>
     );
 });
 
+
+// Khai báo các DI
+
+builder.Services.AddScoped<IAuthService, AuthRepository>();
+
+builder.Services.AddScoped<IRecipeService, RecipeRepository>();
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -48,6 +59,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Cấu hình sử dụng Static Files
+
+app.UseStaticFiles();
 
 // Cấu hình sử dụng middleware kích hoạt CORS
 
