@@ -19,7 +19,6 @@ namespace FoodieHub_API.Repositories
             try
             {
                 var recipes = await _context.Categorys.ToListAsync();
-
                 return new APIResponse<List<Category>>()
                 {
                     Success = true,

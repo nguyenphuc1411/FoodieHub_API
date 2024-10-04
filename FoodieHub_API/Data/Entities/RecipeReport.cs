@@ -11,6 +11,9 @@ namespace FoodieHub_API.Data.Entities
 
         public bool IsRead { get; set; } = false;
 
+        [Column(TypeName = "varchar(20)")]
+        public string Status { get; set; } = "proccess";
+
         public DateTime? Handled_At { get; set; }
 
         // Foreign Key Property

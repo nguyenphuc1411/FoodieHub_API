@@ -8,7 +8,7 @@
 
         public T? Data { get; set; } // Dữ liệu trả về
 
-        public int StatusCode {  get; set; } // Status Code trả về
+        public int StatusCode {  get; set; } // Status Code trả về. Trả về đúng status theo trường hợp.
 
     }
 }

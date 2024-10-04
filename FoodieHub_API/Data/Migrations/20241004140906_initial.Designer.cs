@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodieHub_API.Data.Migrations
 {
     [DbContext(typeof(AppDbConext))]
-    [Migration("20241004023222_migration1")]
-    partial class migration1
+    [Migration("20241004140906_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -114,21 +114,21 @@ namespace FoodieHub_API.Data.Migrations
                         {
                             Id = "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ee499860-d536-4bc6-ae80-4dd6c7f1e65d",
-                            Created_At = new DateTime(2024, 10, 4, 9, 32, 22, 259, DateTimeKind.Local).AddTicks(4885),
-                            Email = "admin@gmail.com",
+                            ConcurrencyStamp = "7b284bf6-6baf-45c2-82e3-781bc49dfb6a",
+                            Created_At = new DateTime(2024, 10, 4, 21, 9, 5, 431, DateTimeKind.Local).AddTicks(9185),
+                            Email = "admin@example.com",
                             EmailConfirmed = true,
                             FullName = "Admin Default",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKHG9lnEW/QwMn736cavFLSj+ab3SUU2OdbQdNLA9YSLL6bV2VXi6Oz3elCP8z86VA==",
+                            NormalizedUserName = "ADMIN123",
+                            PasswordHash = "AQAAAAIAAYagAAAAED0qK8G0iDxb477HD5+qmphOwerDdl/anDAAOuMlSV6I+8z+e3njyfrFSxYVnrxVDA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "11fbd3da-2c36-4afb-a5c0-386d25bc67d3",
+                            SecurityStamp = "9b75db0d-80c2-427d-88dc-9ee0228baa47",
                             Status = "Active",
                             TwoFactorEnabled = false,
-                            Updated_At = new DateTime(2024, 10, 4, 9, 32, 22, 259, DateTimeKind.Local).AddTicks(4822),
-                            UserName = "Admin"
+                            Updated_At = new DateTime(2024, 10, 4, 21, 9, 5, 431, DateTimeKind.Local).AddTicks(9173),
+                            UserName = "Admin123"
                         });
                 });
 
@@ -147,6 +147,12 @@ namespace FoodieHub_API.Data.Migrations
                     b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("CategoryID");
 
@@ -439,6 +445,26 @@ namespace FoodieHub_API.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        },
+                        new
+                        {
+                            Id = "3",
+                            Name = "Moderator",
+                            NormalizedName = "MODERATOR"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -526,6 +552,13 @@ namespace FoodieHub_API.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee",
+                            RoleId = "1"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

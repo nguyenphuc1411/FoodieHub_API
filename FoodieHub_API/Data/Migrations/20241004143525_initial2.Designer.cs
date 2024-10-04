@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodieHub_API.Data.Migrations
 {
     [DbContext(typeof(AppDbConext))]
-    [Migration("20241004112345_mg2")]
-    partial class mg2
+    [Migration("20241004143525_initial2")]
+    partial class initial2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -114,20 +114,20 @@ namespace FoodieHub_API.Data.Migrations
                         {
                             Id = "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4c141ad3-745f-44f6-b255-3ee05bdcda2b",
-                            Created_At = new DateTime(2024, 10, 4, 18, 23, 43, 478, DateTimeKind.Local).AddTicks(4069),
+                            ConcurrencyStamp = "7e32aa3f-c1fa-4f4b-97e0-db2ca3b8ae9a",
+                            Created_At = new DateTime(2024, 10, 4, 21, 35, 24, 841, DateTimeKind.Local).AddTicks(9242),
                             Email = "admin@example.com",
                             EmailConfirmed = true,
                             FullName = "Admin Default",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN123",
-                            PasswordHash = "AQAAAAIAAYagAAAAEIuOVksylKXHqYAqLcF4oJRfIG02im9iaU+UUGHNrwdK7O1YyjIqN6iqgeBrb4bC8g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECspmmyeU3rQWDbxhHsK8IPDWGqurd2tTnjWLhbKCEUO83QGosLJ58UmqTU+UaKKJw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ac179356-8720-4c8e-bd06-e980bd60f9bf",
+                            SecurityStamp = "336936ce-223c-4e7e-9a72-7495f6173d39",
                             Status = "Active",
                             TwoFactorEnabled = false,
-                            Updated_At = new DateTime(2024, 10, 4, 18, 23, 43, 478, DateTimeKind.Local).AddTicks(4038),
+                            Updated_At = new DateTime(2024, 10, 4, 21, 35, 24, 841, DateTimeKind.Local).AddTicks(9232),
                             UserName = "Admin123"
                         });
                 });
@@ -147,6 +147,12 @@ namespace FoodieHub_API.Data.Migrations
                     b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("CategoryID");
 
@@ -368,6 +374,10 @@ namespace FoodieHub_API.Data.Migrations
                     b.Property<string>("ReportContext")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("ReporterID", "RecipeID");
 

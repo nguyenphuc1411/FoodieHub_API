@@ -1,4 +1,5 @@
-﻿using FoodieHub_API.Services;
+﻿using FoodieHub_API.Extentions;
+using FoodieHub_API.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,15 +17,9 @@ namespace FoodieHub_API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Get()
+        public async Task<IActionResult> Get()
         {
             var response = await _service.GetAll();
-            return StatusCode(response.StatusCode, response);
-        }
-        [HttpGet("example")]
-        public async Task<ActionResult> GetExample()
-        {
-            var response = await _service.GetExample();
             return StatusCode(response.StatusCode, response);
         }
     }

@@ -14,6 +14,10 @@ namespace FoodieHub_API.Data.Entities
         [Column(TypeName = "varchar(255)")]
         public string ImageURL {  get; set; }
 
+        public bool Status { get; set; } = false;
+
+        public bool IsDeleted { get; set; } = false;
+
         // Collection Link
         public ICollection<Recipe> Recipes { get; set; }
     }

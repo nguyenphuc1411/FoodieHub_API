@@ -4,6 +4,7 @@ using FoodieHub_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodieHub_API.Data.Migrations
 {
     [DbContext(typeof(AppDbConext))]
-    partial class AppDbConextModelSnapshot : ModelSnapshot
+    [Migration("20241004143400_initial1")]
+    partial class initial1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -111,20 +114,20 @@ namespace FoodieHub_API.Data.Migrations
                         {
                             Id = "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7e32aa3f-c1fa-4f4b-97e0-db2ca3b8ae9a",
-                            Created_At = new DateTime(2024, 10, 4, 21, 35, 24, 841, DateTimeKind.Local).AddTicks(9242),
+                            ConcurrencyStamp = "c712e1c3-2d12-469a-a398-389339b61d98",
+                            Created_At = new DateTime(2024, 10, 4, 21, 33, 59, 920, DateTimeKind.Local).AddTicks(2018),
                             Email = "admin@example.com",
                             EmailConfirmed = true,
                             FullName = "Admin Default",
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN123",
-                            PasswordHash = "AQAAAAIAAYagAAAAECspmmyeU3rQWDbxhHsK8IPDWGqurd2tTnjWLhbKCEUO83QGosLJ58UmqTU+UaKKJw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPsOs0auG5OSetc8Kralvavpn6CLKqJFX9P118r6STtEm+O+04bEJaprXgq3RXQIHg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "336936ce-223c-4e7e-9a72-7495f6173d39",
+                            SecurityStamp = "2dfa7669-392f-4443-b8c2-0d9320298239",
                             Status = "Active",
                             TwoFactorEnabled = false,
-                            Updated_At = new DateTime(2024, 10, 4, 21, 35, 24, 841, DateTimeKind.Local).AddTicks(9232),
+                            Updated_At = new DateTime(2024, 10, 4, 21, 33, 59, 920, DateTimeKind.Local).AddTicks(2007),
                             UserName = "Admin123"
                         });
                 });
@@ -374,7 +377,7 @@ namespace FoodieHub_API.Data.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ReporterID", "RecipeID");
 

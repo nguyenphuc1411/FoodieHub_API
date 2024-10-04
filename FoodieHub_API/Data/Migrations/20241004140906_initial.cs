@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace FoodieHub_API.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class migration1 : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -63,7 +65,9 @@ namespace FoodieHub_API.Data.Migrations
                     CategoryID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryName = table.Column<string>(type: "varchar(255)", nullable: false),
-                    ImageURL = table.Column<string>(type: "varchar(255)", nullable: false)
+                    ImageURL = table.Column<string>(type: "varchar(255)", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -394,9 +398,24 @@ namespace FoodieHub_API.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "1", null, "Admin", "ADMIN" },
+                    { "2", null, "User", "USER" },
+                    { "3", null, "Moderator", "MODERATOR" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Avatar", "Bio", "ConcurrencyStamp", "Created_At", "Email", "EmailConfirmed", "FullName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Status", "TwoFactorEnabled", "Updated_At", "UserName" },
-                values: new object[] { "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee", 0, null, null, "ee499860-d536-4bc6-ae80-4dd6c7f1e65d", new DateTime(2024, 10, 4, 9, 32, 22, 259, DateTimeKind.Local).AddTicks(4885), "admin@gmail.com", true, "Admin Default", false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEKHG9lnEW/QwMn736cavFLSj+ab3SUU2OdbQdNLA9YSLL6bV2VXi6Oz3elCP8z86VA==", null, false, "11fbd3da-2c36-4afb-a5c0-386d25bc67d3", "Active", false, new DateTime(2024, 10, 4, 9, 32, 22, 259, DateTimeKind.Local).AddTicks(4822), "Admin" });
+                values: new object[] { "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee", 0, null, null, "7b284bf6-6baf-45c2-82e3-781bc49dfb6a", new DateTime(2024, 10, 4, 21, 9, 5, 431, DateTimeKind.Local).AddTicks(9185), "admin@example.com", true, "Admin Default", false, null, "ADMIN@GMAIL.COM", "ADMIN123", "AQAAAAIAAYagAAAAED0qK8G0iDxb477HD5+qmphOwerDdl/anDAAOuMlSV6I+8z+e3njyfrFSxYVnrxVDA==", null, false, "9b75db0d-80c2-427d-88dc-9ee0228baa47", "Active", false, new DateTime(2024, 10, 4, 21, 9, 5, 431, DateTimeKind.Local).AddTicks(9173), "Admin123" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "1", "a1111111-bbbb-cccc-dddd-eeeeeeeeeeee" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
